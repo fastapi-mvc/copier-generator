@@ -12,6 +12,9 @@ _envops:
   variable_end_string: "}}"
   variable_start_string: "{{"
 
+_tasks:
+  - "[ ! -f copier.yml.keep ] || mv copier.yml.keep copier.yml"
+
 # TEMPLATE QUESTIONS
 generator:
   type: str
