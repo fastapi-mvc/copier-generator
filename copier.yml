@@ -26,11 +26,6 @@ nix:
   help: Do you want to include Nix expression files?
   default: yes
 
-version:
-  type: str
-  help: What is the generator initial version?
-  default: "0.1.0"
-
 license:
   type: str
   help: What is your generator license?

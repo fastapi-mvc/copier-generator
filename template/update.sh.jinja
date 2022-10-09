@@ -1,7 +1,7 @@
-{%- if nix %}
+{%- if nix -%}
 #! /usr/bin/env nix-shell
 #! nix-shell shell.nix -i bash
-{%- else %}
+{%- else -%}
 #!/usr/bin/env bash
 {% endif %}
 
@@ -18,6 +18,5 @@ copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
   -d nix={{nix}} \
   -d license={{license}} \
   -d repo_url={{repo_url}} \
-  -d version={{version}} \
   -d copyright_date={{copyright_date}} \
   update ./.
