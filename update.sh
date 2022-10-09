@@ -10,6 +10,7 @@ set -o nounset
 set -o pipefail
 
 copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
+  "${@}" \
   -d generator=generator \
   -d nix=True \
   -d license=MIT \

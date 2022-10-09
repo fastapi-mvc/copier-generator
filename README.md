@@ -45,3 +45,9 @@ List of excluded files/paths:
 * `copier.yml`
 * `*.py`
 * `CHANGELOG.md`
+
+Lastly, you can pass extra copier CLI options should you choose:
+
+```shell
+./update.sh -x README.md
+```
