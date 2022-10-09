@@ -22,3 +22,25 @@ copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/
 nix-shell shell.nix
 copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/project
 ```
+
+## Updating
+
+To update your generator with the changes from the [upstream](https://github.com/fastapi-mvc/copier-generator) run:
+
+```shell
+./update.sh
+```
+
+This action will not update/override your template and its configuration, but rather generators common files, ex:
+
+* Environment (pyproject.toml and poetry.lock)
+* README.md
+* Nix expression files
+* dotfiles
+
+List of excluded files/paths:
+
+* `template/**`
+* `copier.yml`
+* `*.py`
+* `CHANGELOG.md`
