@@ -3,7 +3,7 @@ import click
 from fastapi_mvc import Generator
 
 
-cmd_short_help = "Run fastapi-mvc generator {{generator_name}}."
+cmd_short_help = "Run custom generator {{generator_name.replace("_", "-")}}."
 cmd_help = """\
 Creates a dummy hello_world.py example.
 """
@@ -11,7 +11,8 @@ epilog = """\
 Example:
     `fastapi-mvc generate {{generator_name}} WORLD!`
 
-    Creates: hello-world.py
+    creates an example file:
+        helo_world.py
 
 """
 
