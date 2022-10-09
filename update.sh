@@ -15,4 +15,5 @@ copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
   -d license=MIT \
   -d repo_url=https://github.com/fastapi-mvc/copier-generator \
   -d copyright_date=2022 \
+  -a .generator.yml \
   update ./.
