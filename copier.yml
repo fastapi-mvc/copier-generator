@@ -1,0 +1,63 @@
+# TEMPLATE SETTINGS
+_subdirectory: template
+_templates_suffix: .jinja
+_min_copier_version: "6.2.0"
+_envops:
+  block_end_string: "%}"
+  block_start_string: "{%"
+  comment_end_string: "#}"
+  comment_start_string: "{#"
+  keep_trailing_newline: true
+  variable_end_string: "}}"
+  variable_start_string: "{{"
+
+# TEMPLATE QUESTIONS
+generator:
+  type: str
+  help: What is your new generator name?
+
+repo_url:
+  type: str
+  help: What is the generator repository URL?
+
+nix:
+  type: bool
+  help: Do you want to include Nix expression files?
+  default: yes
+
+copier:
+  type: bool
+  help: Do you want to include copier.yml file?
+  default: yes
+
+version:
+  type: str
+  help: What is the generator initial version?
+  default: "0.1.0"
+
+license:
+  type: str
+  help: What is your generator license?
+  choices:
+    - "MIT"
+    - "BSD2"
+    - "BSD3"
+    - "ISC"
+    - "Apache2.0"
+    - "LGPLv3+"
+    - "LGPLv3"
+    - "LGPLv2+"
+    - "LGPLv2"
+    - "no"
+
+copyright_date:
+  type: str
+  help: What is your project copyright date?
+  when: "{% if license != 'no' %}true{% else %}false{% endif %}"
+  default: "2022"
+
+# TEMPLATE NONE-CONFIGURABLE DEFAULTS
+generator_name:
+  type: str
+  default: "{{ generator|lower|replace(' ','_')|replace('-','_') }}"
+  when: false
