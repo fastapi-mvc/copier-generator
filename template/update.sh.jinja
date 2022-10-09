@@ -13,11 +13,11 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md -x LICENSE \
+copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
   -d generator={{generator_name}} \
   -d nix={{nix}} \
   -d license={{license}} \
   -d repo_url={{repo_url}} \
   -d version={{version}} \
-  -d copyright_date=2022 \
+  -d copyright_date={{copyright_date}} \
   copy "gh:fastapi-mvc/copier-generator" ./.
