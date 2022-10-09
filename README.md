@@ -31,12 +31,13 @@ To update your generator with the changes from the [upstream](https://github.com
 ./update.sh
 ```
 
-This action will not update/override your template and its configuration, but rather generators common files, ex:
+This action will not update/override your template and its configuration, but rather generators common files:
 
-* Environment (pyproject.toml and poetry.lock)
-* README.md
+* Environment (`pyproject.toml` and `poetry.lock`)
+* `README.md`
 * Nix expression files
 * dotfiles
+* `LICENSE`
 
 List of excluded files/paths:
 
