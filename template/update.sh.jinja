@@ -1,0 +1,22 @@
+{%- if nix %}
+#! /usr/bin/env nix-shell
+#! nix-shell shell.nix
+{%- else %}
+#!/usr/bin/env bash
+{% endif %}
+
+if [ -n "$DEBUG" ]; then
+	set -x
+fi
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
+  -d generator={{generator_name}} \
+  -d nix={{nix}} \
+  -d license={{license}} \
+  -d repo_url={{repo_url}} \
+  -d version={{version}}
+  copy "gh:fastapi-mvc/copier-generator" ./.
