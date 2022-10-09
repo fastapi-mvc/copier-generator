@@ -2,6 +2,7 @@
 _subdirectory: template
 _templates_suffix: .jinja
 _min_copier_version: "6.2.0"
+_answers_file: .generator.yml
 _envops:
   block_end_string: "%}"
   block_start_string: "{%"
