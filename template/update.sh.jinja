@@ -13,7 +13,9 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-copier -x template/** -x copier.yml -x *.py -x CHANGELOG.md \
+UPDATE_EXCLUDES="${UPDATE_EXCLUDES:=-x template/** -x copier.yml -x *.py -x CHANGELOG.md}"
+
+copier "${UPDATE_EXCLUDES}" \
   -d generator={{generator_name}} \
   -d nix={{nix}} \
   -d license={{license}} \
