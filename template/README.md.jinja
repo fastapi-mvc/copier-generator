@@ -46,9 +46,8 @@ List of excluded files/paths:
 * `*.py`
 * `CHANGELOG.md`
 
-Lastly, you can override the default list of excludes should you choose:
+Lastly, you can pass extra copier CLI options should you choose:
 
 ```shell
-export UPDATE_EXCLUDES=-x template/** -x copier.yml -x *.py -x CHANGELOG.md -x README.md
-./update.sh
+./update.sh -x README.md
 ```
