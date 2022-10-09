@@ -1,3 +1,4 @@
+{%- raw -%}
 # TEMPLATE SETTINGS
 _subdirectory: template
 _templates_suffix: .jinja
@@ -28,3 +29,4 @@ package_name:
   type: str
   default: "{{ project_name|lower|replace(' ','_')|replace('-','_') }}"
   when: false
+{%- endraw %}
