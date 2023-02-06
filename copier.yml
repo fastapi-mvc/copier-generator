@@ -11,9 +11,12 @@ _envops:
   keep_trailing_newline: true
   variable_end_string: "}}"
   variable_start_string: "{{"
-
-_tasks:
-  - "[ ! -f copier.yml.keep ] || mv copier.yml.keep copier.yml"
+_exclude:
+  - "*.py[co]"
+  - "__pycache__"
+  - ".git"
+  - ".DS_Store"
+  - ".svn"
 
 # TEMPLATE QUESTIONS
 generator:
