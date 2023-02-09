@@ -19,7 +19,7 @@ copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/
 ## Using Nix
 
 ```shell
-nix-shell shell.nix
+nix develop
 copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/project
 ```
 
@@ -29,6 +29,8 @@ To update your generator with the changes from the [upstream](https://github.com
 
 ```shell
 ./update.sh
+# Or
+nix run .#update
 ```
 
 This action will not update/override your template and its configuration, but rather generators common files:
