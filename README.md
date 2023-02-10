@@ -13,14 +13,18 @@ Prerequisites:
 * copier 6.2.0 or later
 
 ```shell
-copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/project
+copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/generator
 ```
 
 ## Using Nix
 
+Prerequisites:
+
+* Nix 2.8.x or later installed [How to install Nix](https://nixos.org/download.html)
+
 ```shell
-nix-shell shell.nix
-copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/project
+nix develop
+copier copy "https://github.com/fastapi-mvc/copier-generator.git" /path/to/your/new/generator
 ```
 
 ## Updating
@@ -29,13 +33,14 @@ To update your generator with the changes from the [upstream](https://github.com
 
 ```shell
 ./update.sh
+# Or
+nix run .#update
 ```
 
 This action will not update/override your template and its configuration, but rather generators common files:
 
-* Environment (`pyproject.toml` and `poetry.lock`)
-* `README.md`
 * Nix expression files
+* `README.md`
 * dotfiles
 * `LICENSE`
 
@@ -49,5 +54,7 @@ List of excluded files/paths:
 Lastly, you can pass extra copier CLI options should you choose:
 
 ```shell
-./update.sh -x README.md
+./update.sh -x README.md --vcs-ref=custom_branch
+# Or
+nix run .#update -- -x README.md --vcs-ref=custom_branch
 ```
