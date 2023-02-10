@@ -2,7 +2,7 @@
 
 This file documents changes to [copier-generator](https://github.com/fastapi-mvc/copier-generator). The release numbering uses [semantic versioning](http://semver.org).
 
-## Unreleased
+## 0.2.0 (10.02.2023)
 
 ### Features
 
