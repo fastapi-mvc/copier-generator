@@ -60,6 +60,7 @@
             buildInputs = [
               pkgs.git
               pkgs.coreutils
+              pkgs.poetry
             ];
           });
         };
