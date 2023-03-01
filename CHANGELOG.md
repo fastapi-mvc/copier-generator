@@ -2,6 +2,12 @@
 
 This file documents changes to [copier-generator](https://github.com/fastapi-mvc/copier-generator). The release numbering uses [semantic versioning](http://semver.org).
 
+## 0.3.0 (01.03.2023)
+
+### Internal
+
+* Update template to work with the new API for creating generator's CLIs. [fastapi-mvc/fastapi-mvc#247](https://github.com/fastapi-mvc/fastapi-mvc/issues/247). PR [#2](https://github.com/fastapi-mvc/copier-generator/pull/2)
+
 ## 0.2.0 (10.02.2023)
 
 ### Features

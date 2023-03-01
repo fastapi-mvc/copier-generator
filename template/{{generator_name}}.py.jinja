@@ -2,7 +2,10 @@
 import os
 
 import click
-from fastapi_mvc import Generator
+import copier
+from fastapi_mvc.cli import GeneratorCommand
+from fastapi_mvc.utils import require_fastapi_mvc_project
+from fastapi_mvc.constants import ANSWERS_FILE
 
 
 cmd_short_help = "Run custom generator {{generator_name.replace("_", "-")}}."
@@ -20,27 +23,38 @@ Example:
 
 
 @click.command(
-    cls=Generator,
-    # Or use repository address
-    template=os.path.dirname(__file__),
-    category="Custom",
+    # Using ``GeneratorCommand`` class is not required.
+    # It only provides you with alias, category and some help formatting utils.
+    # You can use ``click.Command`` should you choose.
+    cls=GeneratorCommand,
     help=cmd_help,
     short_help=cmd_short_help,
+    # Define alias short-cut for more efficient invocation
+    alias="foo",
+    # Define category under which generator should be printed in ``fastapi-mvc generate`` CLI command help page.
+    category="Custom",
 )
 @click.argument(
     "NAME",
     required=True,
     nargs=1,
 )
-@click.pass_context
-def {{generator_name}}(ctx, name):
-    # You can access Generator class object instance for this command via click.Context
-    # https://click.palletsprojects.com/en/8.1.x/api/?highlight=context#click.Context.command
-    ctx.command.ensure_project_data()
+def {{generator_name}}(name: str) -> None:
+    """Define {{generator_name}} generator command-line interface.
+
+    Args:
+        name (str): Given name to greet.
+
+    """
+    project_data = require_fastapi_mvc_project()
 
     data = {
-        "project_name": ctx.command.project_data["project_name"],
+        "project_name": project_data["project_name"],
         "name": name.lower().replace("-", "_"),
     }
 
-    ctx.command.run_copy(data=data)
+    copier.run_copy(
+        src_path=os.path.dirname(__file__),  # Or use git repository
+        data=data,
+        answers_file=ANSWERS_FILE,
+    )
