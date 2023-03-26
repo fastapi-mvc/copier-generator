@@ -1,4 +1,3 @@
-
 name: Update flake
 on:
   workflow_dispatch:
