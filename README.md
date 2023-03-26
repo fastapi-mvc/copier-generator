@@ -4,6 +4,19 @@ Copier template for scaffolding new generator upon [fastapi-mvc](https://github.
 
 ## Quickstart
 
+### Using fastapi-mvc
+
+Prerequisites:
+* fastapi-mvc
+* Git 2.27 or newer
+
+```shell
+git clone "https://github.com/fastapi-mvc/copier-generator.git"
+FMVC_PATH="$PWD:$FMVC_PATH" fastapi-mvc generate generator /path/to/your/new/generator
+```
+
+### Using copier
+
 To use this template outside `fastapi-mvc`:
 
 Prerequisites:
