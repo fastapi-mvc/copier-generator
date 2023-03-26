@@ -2,6 +2,12 @@
 
 This file documents changes to [copier-generator](https://github.com/fastapi-mvc/copier-generator). The release numbering uses [semantic versioning](http://semver.org).
 
+## 0.4.1 (26.03.2023)
+
+### Fixed
+
+* Typo in `README.md` template [f100013](https://github.com/fastapi-mvc/copier-generator/commit/f100013020ff58f731dc17d41859783d7d4c181a).
+
 ## 0.4.0 (26.03.2023)
 
 ### Features
