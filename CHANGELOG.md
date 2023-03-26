@@ -2,6 +2,16 @@
 
 This file documents changes to [copier-generator](https://github.com/fastapi-mvc/copier-generator). The release numbering uses [semantic versioning](http://semver.org).
 
+## 0.4.0 (26.03.2023)
+
+### Features
+
+* Implement workflow for updating `flake.lock` inputs. PR [#3](https://github.com/fastapi-mvc/copier-generator/pull/3)
+
+### Internal
+
+* Refactor `flake.nix` using [flake-parts](https://github.com/hercules-ci/flake-parts). PR [#3](https://github.com/fastapi-mvc/copier-generator/pull/3)
+
 ## 0.3.0 (01.03.2023)
 
 ### Internal
