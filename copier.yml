@@ -32,6 +32,11 @@ nix:
   help: Do you want to include Nix expression files?
   default: yes
 
+github_actions:
+  type: bool
+  help: Do you want to include GitHub actions?
+  default: yes
+
 license:
   type: str
   help: What is your generator license?
